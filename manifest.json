@@ -1,0 +1,40 @@
+{
+  "name": "Check Tachyons",
+  "description" : "Extension for checking tachyons on your website",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Tachyons Converter"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens index.html"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_start",
+      "js": ["scripts/jquery.min.js", "scripts/content_script.js"]
+    }
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }
+}
