@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <style is="custom-style">
+        body {
+            background-color: #fff;
+            font-height: 18px;
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0;
+            padding: 0 !important;
+            width: 780px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .click{
+            color: blue;
+            cursor: pointer;
+        }
+        .dn{
+            display: none;
+        }
+    </style>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popup-dev.js"></script>
+</head>
+<body>
+<div>
+    <button id="btn-show">Show</button>
+</div>
+<table style="width:100%" id="table">
+    <tr>
+        <th>Query</th>
+        <th>File</th>
+        <th>Line</th>
+        <th>Tachyon class</th>
+        <th>Remove style</th>
+    </tr>
+</table>
+<textarea id="text-copy" class="dn"></textarea>
+</body>
+</html>
