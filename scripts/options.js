@@ -1,6 +1,7 @@
 // Saves options to chrome.storage
 
 function save_options() {
+    //Todo Should enable adjust tachyons classes
     var tachyons = $('#tachyons').val();
     var baseRem = $('#base-rem').val();
     var ignoreClasses = $('#ignore-classes').val();
@@ -25,7 +26,7 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
     chrome.storage.sync.get(['tachyonOptions'], function(items) {
-        var options = items.tachyonOptions;
+        var options = items.tachyonOptions || {};
         $('#tachyons').val(options.tachyons || $('#tachyons-default').val());
         $('#ignore-classes').val(options.ignoreClasses || $('#ignore-classes-default').val());
         $('#base-rem').val(options.baseRem || $('#base-rem-default').val());
